@@ -40,9 +40,22 @@ function startTimer(){
     }, 1000);
 }
 
+function stopTimer(){
+    clearInterval(interval);
+    start[0].style.display = "inline-block";
+    start[1].style.display = "none";
+}
+
+function reset(){
+    stopTimer();
+    current = workTime * 60;
+    timerDisplay();
+}
+
+
 function init(){
-    start[0].addEventListener("click", startTimer());
-    start[1].addEventListener("click", stopTimer());
+    start[0].addEventListener("click", startTimer);
+    start[1].addEventListener("click", stopTimer);
 }
 
 init();
