@@ -15,7 +15,19 @@
         <h1 class="work"><i class="fa-solid fa-briefcase"></i></h1>
         <h1 class="break"><i class="fa-solid fa-mug-saucer"></i></h1>
     </div>
-    
+    <main>
+        <div class="container">
+            <div class="timer">
+                <div class="timer__time">
+                    <span class="time" id="time"></span>
+                </div>
+                <div class="timer__buttons">
+                    <button class="timer__button timer__button--start"><i class="fa-solid fa-play"></i></button>
+                    <button class="timer__button timer__button--stop"><i class="fa-solid fa-stop"></i></button>
+                    <button class="timer__button timer__button--reset" onclick="reset();"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+            </div>
+    </main>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/880ee86f7a.js" crossorigin="anonymous"></script>
 </body>
