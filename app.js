@@ -37,7 +37,7 @@ function startTimer(){
             initStartWork();
             stopTimer();
         }
-    }, 1000);
+    }, 1);
 }
 
 function stopTimer(){
@@ -52,8 +52,52 @@ function reset(){
     timerDisplay();
 }
 
+function initStartWork(){
+    current = workTime * 60;
+    work.style.color = "#00cc00";
+    break_.style.color = "black";
+    saveTime();
+    timerDisplay();
+}
+
+function initStartBreak(){
+    current = breakTime * 60;
+    break_.style.color = "#00cc00";
+    work.style.color = "black";
+    saveTime();
+    timerDisplay();
+}
+
+function saveTime(){
+    localStorage.setItem("current", current);
+    localStorage.setItem("workTime", workTime);
+    localStorage.setItem("breakTime", breakTime);
+}
+
+function saveTime(){
+    localStorage.setItem("current", current);
+    localStorage.setItem("workTime", workTime);
+    localStorage.setItem("breakTime", breakTime);
+}
+
+function initCurrentTime(){
+    let savedCurrent = localStorage.getItem("current");
+    let savedWorkTime = localStorage.getItem("workTime");
+    let savedBreakTime = localStorage.getItem("breakTime");
+    if(savedCurrent !== null){
+        current = savedCurrent;
+    }
+    if(savedWorkTime !== null){
+        workTime = savedWorkTime;
+    }
+    if(savedBreakTime !== null){
+        breakTime = savedBreakTime;
+    }
+}
 
 function init(){
+    timerDisplay();
+    initCurrentTime();
     start[0].addEventListener("click", startTimer);
     start[1].addEventListener("click", stopTimer);
 }
