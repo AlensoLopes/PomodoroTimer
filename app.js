@@ -1,6 +1,9 @@
 const timer = document.querySelector(".time");
 const start = document.querySelectorAll(".timer__button");
 
+const work = document.querySelector(".work");
+const break_ = document.querySelector(".break");
+
 let workTime = 25;
 let breakTime = 5;
 let current = 0;
@@ -108,4 +111,21 @@ function init(){
     start[1].addEventListener("click", stopTimer);
 }
 
-init();
+function changeInput(){
+    document.getElementById("workTime").addEventListener("change", () => {
+        workTime = document.getElementById("workTime").value;
+        current = workTime * 60;
+        saveTime();
+        init();
+    });
+    document.getElementById("breakTime").addEventListener("change", () => {
+        breakTime = document.getElementById("breakTime").value;
+        saveTime();
+        init();
+    });
+}
+
+window.onload = () => {
+    changeInput();
+    init();
+}
