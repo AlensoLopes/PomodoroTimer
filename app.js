@@ -50,9 +50,16 @@ function stopTimer(){
 }
 
 function reset(){
+    localStorage.clear();
     stopTimer();
+    workTime = document.getElementById("workTime").value;
+    breakTime = document.getElementById("breakTime").value;
     current = workTime * 60;
-    timerDisplay();
+    init();
+    saveTime();
+    start[0].style.display = "inline-block";
+    start[1].style.display = "none";
+    start[2].style.display = "none";
 }
 
 function initStartWork(){
@@ -77,12 +84,6 @@ function saveTime(){
     localStorage.setItem("breakTime", breakTime);
 }
 
-function saveTime(){
-    localStorage.setItem("current", current);
-    localStorage.setItem("workTime", workTime);
-    localStorage.setItem("breakTime", breakTime);
-}
-
 function initCurrentTime(){
     let savedCurrent = localStorage.getItem("current");
     let savedWorkTime = localStorage.getItem("workTime");
@@ -96,6 +97,8 @@ function initCurrentTime(){
     if(savedBreakTime !== null){
         breakTime = savedBreakTime;
     }
+    document.getElementById("workTime").value = workTime;
+    document.getElementById("breakTime").value = breakTime;
 }
 
 function init(){
