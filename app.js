@@ -6,6 +6,9 @@ let breakTime = 5;
 let current = 0;
 let interval;
 
+let isWork = true,
+    isBreak = false;
+
 function timerDisplay(){
     let minutes = Math.floor(current / 60);
     let seconds = current % 60;
@@ -96,8 +99,8 @@ function initCurrentTime(){
 }
 
 function init(){
-    timerDisplay();
     initCurrentTime();
+    timerDisplay();
     start[0].addEventListener("click", startTimer);
     start[1].addEventListener("click", stopTimer);
 }
