@@ -43,7 +43,7 @@ function startTimer(){
             initStartWork();
             stopTimer();
         }
-    }, 1);
+    }, 1000);
 }
 
 function stopTimer(){
