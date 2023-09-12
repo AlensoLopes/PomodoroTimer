@@ -130,6 +130,7 @@ function changeInput(){
 }
 
 window.onload = () => {
+    current = workTime * 60;
     changeInput();
     init();
 }
