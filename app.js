@@ -65,7 +65,10 @@ function initStartWork(){
     current = workTime * 60;
     work.style.color = "#00cc00";
     break_.style.color = "black";
-    document.body.style.backgroundColor = "#d74740"
+    document.body.style.background = " rgb(218,140,14);";
+    document.body.style.background = "radial-gradient(circle, rgba(218,140,14,1) 19%, rgba(218,48,14,1) 62%, rgba(207,0,105,1) 100%)";
+    document.body.style.animation = "breath 5s ease-in-out infinite";
+    document.body.style.backgroundPosition = "center";
     saveTime();
     timerDisplay();
 }
@@ -76,7 +79,11 @@ function initStartBreak(){
     work.style.color = "black";
     saveTime();
     timerDisplay();
-    document.body.style.backgroundColor = "#129a68";
+    document.body.style.animation = "transition 5s ease-in-out infinite"
+    document.body.style.background = "rgb(174,215,238)";
+    document.body.style.background = "radial-gradient(circle, rgba(174,215,238,1) 19%, rgba(145,198,156,1) 62%, rgba(148,233,211,1) 100%)";
+    document.body.style.animation = "breath 5s ease-in-out infinite";
+    document.body.style.backgroundPosition = "center";
 }
 
 function saveTime(){
