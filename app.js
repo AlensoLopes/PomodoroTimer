@@ -40,7 +40,7 @@ function startTimer(){
             isBreak = false;
             initStartWork();
         }
-    }, 1);
+    }, 1000);
 }
 
 function stopTimer(){
