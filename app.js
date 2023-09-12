@@ -44,7 +44,7 @@ function startTimer(){
             sound.play();
             initStartWork();
         }
-    }, 1);
+    }, 1000);
 }
 
 function stopTimer(){
