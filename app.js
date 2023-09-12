@@ -65,6 +65,7 @@ function initStartWork(){
     current = workTime * 60;
     work.style.color = "#00cc00";
     break_.style.color = "black";
+    document.body.style.backgroundColor = "#d74740"
     saveTime();
     timerDisplay();
 }
@@ -75,6 +76,7 @@ function initStartBreak(){
     work.style.color = "black";
     saveTime();
     timerDisplay();
+    document.body.style.backgroundColor = "#129a68";
 }
 
 function saveTime(){

@@ -15,7 +15,6 @@
 
 .timer__button--start{
     display: block;
-    margin-right: 10px;
 }
 
 .title{
@@ -175,5 +174,5 @@ a{
 }
 
 body{
-    background-color: #ff6962;
+    background-color: #d74740;
 }
