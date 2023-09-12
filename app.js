@@ -136,6 +136,15 @@ function changeInput(){
 }
 
 window.onload = () => {
+    if(localStorage.getItem("current") === 0){
+        localStorage.clear();
+        workTime = 25;
+        breakTime = 5;
+        document.getElementById("workTime").value = workTime;
+        document.getElementById("breakTime").value = breakTime;
+        current = workTime * 60;
+        saveTime();
+    }
     current = workTime * 60;
     changeInput();
     init();
