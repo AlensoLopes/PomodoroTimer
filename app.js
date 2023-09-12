@@ -4,6 +4,8 @@ const start = document.querySelectorAll(".timer__button");
 const work = document.querySelector(".work");
 const break_ = document.querySelector(".break");
 
+const sound = new Audio("sound/sound.mp4");
+
 let workTime = 25;
 let breakTime = 5;
 let current = 0;
@@ -33,14 +35,16 @@ function startTimer(){
             stopTimer();
             isWork = false;
             isBreak = true;
+            sound.play();
             initStartBreak();
         }else if(current === 0 && isBreak){
             stopTimer();
             isWork = true;
             isBreak = false;
+            sound.play();
             initStartWork();
         }
-    }, 1000);
+    }, 1);
 }
 
 function stopTimer(){
