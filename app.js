@@ -117,12 +117,18 @@ function init(){
 
 function changeInput(){
     document.getElementById("workTime").addEventListener("change", () => {
+        if(document.getElementById("workTime").value < 1){
+            document.getElementById("workTime").value = 25;
+        }
         workTime = document.getElementById("workTime").value;
         current = workTime * 60;
         saveTime();
         init();
     });
     document.getElementById("breakTime").addEventListener("change", () => {
+        if(document.getElementById("breakTime").value < 1){
+            document.getElementById("breakTime").value = 5;
+        }
         breakTime = document.getElementById("breakTime").value;
         saveTime();
         init();
