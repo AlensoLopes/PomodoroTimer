@@ -53,9 +53,7 @@ Contributions to this project are welcome. If you have ideas for improvements or
 
 For any questions or feedback, please contact the project maintainer:
 
-Alenso Lopes
-alenso.lopes@unicaen.fr
-https://www.github.com/AlensoLopes
+Alenso Lopes, feel free to contact me at alenso.lopes@unicaen.fr for any inquiries or feedback.
 
 ---
 
