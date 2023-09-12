@@ -8,10 +8,6 @@
     box-sizing: border-box;
 }
 
-.timer__button--stop{
-    display: none;
-    margin-right: 10px;
-}
 
 .timer__button--reset{
     display: none;

@@ -24,26 +24,23 @@ function timerDisplay(){
 function startTimer(){
     start[0].style.display = "none";
     start[1].style.display = "inline-block";
-    start[2].style.display = "inline-block";
 
     interval = setInterval(() => {
         current--;
         timerDisplay();
         saveTime();
         if(current === 0 && isWork){
-            clearInterval(interval);
+            stopTimer();
             isWork = false;
             isBreak = true;
             initStartBreak();
-            stopTimer();
         }else if(current === 0 && isBreak){
-            clearInterval(interval);
+            stopTimer();
             isWork = true;
             isBreak = false;
             initStartWork();
-            stopTimer();
         }
-    }, 1000);
+    }, 1);
 }
 
 function stopTimer(){
@@ -62,7 +59,6 @@ function reset(){
     saveTime();
     start[0].style.display = "inline-block";
     start[1].style.display = "none";
-    start[2].style.display = "none";
 }
 
 function initStartWork(){
@@ -108,7 +104,6 @@ function init(){
     initCurrentTime();
     timerDisplay();
     start[0].addEventListener("click", startTimer);
-    start[1].addEventListener("click", stopTimer);
 }
 
 function changeInput(){
