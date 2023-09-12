@@ -12,7 +12,6 @@ The purpose of this project is to create a user-friendly and customizable Pomodo
 
 - **Work Interval:** Users can set the duration of their work interval (e.g., 25 minutes) to suit their needs.
 - **Break Interval:** Users can also customize the duration of their break interval (e.g., 5 minutes) to suit their preferences.
-- **Long Break:** There will be an option to configure a longer break interval (e.g., 15 minutes) after a certain number of work intervals (e.g., 4).
 
 ### 2. Start and Reset ⏯️
 
