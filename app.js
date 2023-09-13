@@ -14,6 +14,9 @@ let interval;
 let isWork = true,
     isBreak = false;
 
+/**
+ * @brief Display the timer in the html page in the format mm:ss.
+ **/
 function timerDisplay(){
     let minutes = Math.floor(current / 60);
     let seconds = current % 60;
@@ -23,6 +26,9 @@ function timerDisplay(){
     timer.innerHTML = `${minutes}:${seconds}`;
 }
 
+/**
+ * @brief Allow to start the timer, and start the time. Change the part when the timer is over.
+ **/
 function startTimer(){
     start[0].style.display = "none";
     start[1].style.display = "inline-block";
@@ -47,11 +53,23 @@ function startTimer(){
     }, 1000);
 }
 
+
+/**
+ * @brief Stop the timer.
+ * @details Stop the timer and change the button to start.
+ * @see startTimer()
+ * */
 function stopTimer(){
     clearInterval(interval);
     start[0].style.display = "inline-block";
     start[1].style.display = "none";
 }
+
+/**
+ * @brief Reset the timer.
+ * @details Reset the timer and change the button to start.
+ * @see startTimer()
+ * */
 
 function reset(){
     localStorage.clear();
@@ -65,6 +83,11 @@ function reset(){
     start[1].style.display = "none";
 }
 
+/**
+ * @brief init the timer for the work part.
+ * @details init the timer for the work part and change the color of the background.
+ * @see startWork();
+ */
 function initStartWork(){
     current = workTime * 60;
     work.style.color = "#00cc00";
@@ -77,6 +100,11 @@ function initStartWork(){
     timerDisplay();
 }
 
+/**
+ * @brief init the timer for the break part.
+ * @details init the timer for the break part and change the color of the background.
+ * @see startBreak();
+ */
 function initStartBreak(){
     current = breakTime * 60;
     break_.style.color = "#00cc00";
@@ -90,12 +118,23 @@ function initStartBreak(){
     document.body.style.backgroundPosition = "center";
 }
 
+/**
+ * @brief Save the time in the local storage.
+ * @details Save the time in the local storage to retrieve the time when closing the tab.
+ * @see initCurrentTime()
+ * */
 function saveTime(){
     localStorage.setItem("current", current);
     localStorage.setItem("workTime", workTime);
     localStorage.setItem("breakTime", breakTime);
 }
 
+
+/**
+ * @brief init the time when the page is loaded.
+ * @details init the time to the last time stored in the localstorage when the page is loaded.
+ * @see saveTime()
+ * */
 function initCurrentTime(){
     let savedCurrent = localStorage.getItem("current");
     let savedWorkTime = localStorage.getItem("workTime");
@@ -113,12 +152,21 @@ function initCurrentTime(){
     document.getElementById("breakTime").value = breakTime;
 }
 
+
+/**
+ * @brief init the timer.
+ * @details init the timer and add the event on the start button.
+ * */
 function init(){
     initCurrentTime();
     timerDisplay();
     start[0].addEventListener("click", startTimer);
 }
 
+/**
+ * @brief Change the input value.
+ * @details Change the input value when the user change the value and save it in the storage.
+ * */
 function changeInput(){
     document.getElementById("workTime").addEventListener("change", () => {
         if(document.getElementById("workTime").value < 1){
@@ -139,6 +187,9 @@ function changeInput(){
     });
 }
 
+/**
+ * @brief init the timer when the page is loaded.
+ * */
 window.onload = () => {
     if(localStorage.getItem("current") === 0){
         localStorage.clear();
