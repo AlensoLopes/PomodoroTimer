@@ -38,13 +38,11 @@ function startTimer(){
         timerDisplay();
         saveTime();
         if(current === 0 && isWork){
-            stopTimer();
             isWork = false;
             isBreak = true;
             sound.play();
             initStartBreak();
         }else if(current === 0 && isBreak){
-            stopTimer();
             isWork = true;
             isBreak = false;
             sound.play();
