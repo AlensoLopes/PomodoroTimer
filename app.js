@@ -167,8 +167,11 @@ function init(){
  * */
 function changeInput(){
     document.getElementById("workTime").addEventListener("change", () => {
-        if(document.getElementById("workTime").value < 1){
+        if(document.getElementById("workTime").value <= 0 
+        || document.getElementById("workTime").value %1 !== 0 
+        || document.getElementById("workTime").value > 60){
             document.getElementById("workTime").value = 25;
+            alert("Error with workTime, time was reset");
         }
         workTime = document.getElementById("workTime").value;
         current = workTime * 60;
@@ -176,8 +179,11 @@ function changeInput(){
         init();
     });
     document.getElementById("breakTime").addEventListener("change", () => {
-        if(document.getElementById("breakTime").value < 1){
+        if(document.getElementById("breakTime").value <= 0 
+        || document.getElementById("breakTime").value > 60
+        || document.getElementById("breakTime").value %1 !== 0){
             document.getElementById("breakTime").value = 5;
+            alert("Error with breakTime, time was reset");
         }
         breakTime = document.getElementById("breakTime").value;
         saveTime();
